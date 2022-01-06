@@ -1,0 +1,1311 @@
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 4.9rem;
+
+  /*========== Colors ==========*/
+  --first-color: #5CB972;
+  --title-color: #FFFFFF;
+  --text-color: #D2D3D5;
+  --body-color: #0E1220;
+  --white-color: #FFFFFF;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'good_timingbold';
+  --biggest-font-size: 4rem;
+  --h1-font-size: 3.375rem;
+  --h2-font-size: 2.375rem;
+  --h3-font-size: 2rem;
+  --h4-font-size: 1.5625rem;
+  --h5-font-size: 1.25rem;
+  --h6-font-size: 0.875rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-bold: bold
+    /*========== Margenes ==========*/
+    --mb-1: .5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 4rem;
+    --h2-font-size: 2.875rem;
+    --h3-font-size: 2.25rem;
+    --h4-font-size: 1.75rem;
+    --h5-font-size: 1.375rem;
+    --h6-font-size: 1.125rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*========== BASE ==========*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  line-height: 72px;
+  font-weight: var(--font-bold);
+  color: var(--white-color);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  line-height: 58px;
+  color: var(--white-color);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+  line-height: 42px;
+  color: var(--white-color);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+  line-height: 28.8px;
+  color: var(--white-color);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+  line-height: 22.4px;
+  color: var(--white-color);
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+  line-height: 18px;
+  color: var(--white-color);
+}
+
+p {
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*========== CLASS CSS ==========*/
+section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 880px;
+  margin: 30px auto 50px;
+}
+
+.section-title p {
+  margin-top: 15px;
+}
+
+/*========== LAYOUT ==========*/
+.container {
+  max-width: 1380px;
+}
+
+.container-fluid {
+  max-width: 1800px;
+}
+
+
+/*========== Button ==========*/
+
+.btn {
+  padding: 12px 25px;
+  background-color: var(--first-color);
+  color: var(--white-color);
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--first-color);
+  border: 1px solid var(--first-color);
+}
+
+
+/* ========================================
+==================== HEADER== =============
+=========================================== */
+
+
+/*===== LAYOUT =====*/
+
+.l-header {
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+  box-shadow: 0 1px 4px rgba(146, 161, 176, .15);
+}
+
+/*===== NAV =====*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list .nav__item {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.nav__logo {
+  width: 190px !important;
+}
+
+
+.nav__logo a {
+  color: var(--second-color);
+}
+
+.nav__toggle {
+  display: none;
+}
+
+.nav__toggle .bar {
+  width: 35px;
+  height: 4px;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: var(--white-color);
+  border-radius: 100px;
+}
+
+.nav__list .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: 8px;
+}
+
+.nav__list .btn img {
+  margin-right: 10px;
+  width: 25px;
+}
+
+@media screen and (max-width: 1275px) {
+
+  .l-header {
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+    box-shadow: 0 1px 4px rgba(146, 161, 176, .15);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    background-color: var(--body-color);
+    transition: .5s;
+  }
+
+  .nav__item {
+    display: block !important;
+    text-align: center;
+    padding: 1rem 0 !important;
+  }
+
+  .nav__toggle .bar {
+    display: block;
+    width: 35px;
+    height: 4px;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: var(--white-color);
+    border-radius: 100px;
+  }
+
+  .nav__toggle:hover {
+    cursor: pointer;
+  }
+
+  #mobile-menu {
+    display: block;
+    padding-right: 10px;
+    position: absolute;
+    right: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 100%;
+  }
+
+
+
+}
+
+@media screen and (max-width: 450px) {
+  .nav__item {
+    display: block !important;
+    text-align: center;
+    padding: 0.7rem 0;
+  }
+}
+
+.nav__list .nav__item {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+
+.nav__list .nav__item .nav__link.active {
+  color: #5CB972;
+  transition: all 0.5s;
+}
+
+.nav__list .nav__item .nav__link {
+  position: relative;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.nav__list .nav__item .nav__link:hover {
+  position: relative;
+  color: var(--first-color);
+}
+
+.nav__link:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+  transition: all 0.10s;
+}
+
+
+/*Active menu*/
+.nav__link.active::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+  transition: all 0.5s;
+}
+
+/*=== Show menu ===*/
+.show {
+  right: 0;
+}
+
+/* ========================================
+================== Home-Video =============
+=========================================== */
+
+#home {
+  padding: 0 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#home video {
+  width: 100%;
+  margin: 0;
+}
+
+
+/* =========================================
+====================== NFT =================
+============================================ */
+#NFT {
+  background-color: #1C222D;
+}
+
+.nft-example .item .card {
+  background-color: #252A35;
+  background-image: url(../images/NFT-examples/bg.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  transition: all 0.5s;
+}
+
+.nft-example .item .card:hover {
+  transform: scale(1.1);
+}
+
+.nft-example .item .title-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+/* ==========================================
+====================== Mint =================
+============================================= */
+
+.nft-mint {
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nft-mint img {
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.nft-mint .nft-mint-content {
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+.nft-mint-content .mint-descrip {
+  margin-top: 40px;
+}
+
+.nft-mint-content .mint-descrip p {
+  margin-top: 20px;
+}
+
+.nft-mint .nft-price-date {
+  margin-top: 20px;
+}
+
+.nft-mint .nft-price-date .date,
+h4 {
+  margin-top: 10px;
+}
+
+.nft-mint .price {
+  float: left;
+  justify-content: center;
+  align-items: center;
+}
+
+.nft-mint .nft-price-date .date {
+  float: left;
+  justify-content: center;
+  align-items: center;
+}
+
+.nft-mint .nft-price-date span {
+  margin-left: 10px;
+}
+
+.mint-bar {
+  max-width: 1000px;
+  padding: 35px 20px;
+  background-color: var(--first-color);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#time {
+  font-size: var(--h3-font-size);
+  text-align: start;
+  color: var(--white-color);
+}
+
+#time p {
+  font-size: var(--normal-font-size);
+  text-align: start;
+  color: var(--white-color);
+}
+
+.item-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-btn .add-items {
+  margin-right: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  background: #83CA94;
+}
+
+
+.add-items .num {
+  margin: 0 10px;
+  font-size: var(--h6-font-size);
+  color: var(--white-color);
+}
+
+.add-items span {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 100%;
+  line-height: 30px;
+  text-align: center;
+  color: var(--body-color);
+  background-color: var(--white-color);
+  cursor: pointer;
+}
+
+
+.add-items span:nth-child(2) {
+  border: none;
+  border-radius: 100%;
+  line-height: 32px;
+  text-align: center;
+  color: #353844;
+  background-color: transparent;
+}
+
+.btn-mint {
+  background-color: #fff;
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+.btn-mint:hover {
+  background-color: transparent;
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+}
+
+.down-card {
+  margin-top: 130px;
+}
+
+.down-card .card {
+  background-color: #252A35;
+  border-radius: 12px;
+  margin: 15px 0;
+}
+
+.down-card .card-body {
+  text-align: center;
+  padding: 27px;
+}
+
+.down-card .card-body .ex-height {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.down-card .card-body p {
+  font-size: var(--normal-font-size);
+  color: #BEC0C1;
+  margin-top: 10px;
+  height: 76px;
+  overflow: hidden;
+}
+
+
+/* ==========================================
+=================== Characters ==============
+============================================= */
+
+.characters-video-text {
+  text-align: center;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* ==========================================
+=================== Roadmap =================
+============================================= */
+#roadmap {
+  background-color: #141924;
+}
+
+#roadmap .container {
+  max-width: 1020px;
+}
+
+#roadmap .roadmap-item {
+  margin-top: 100px;
+}
+
+.roadmap-item .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  background-color: #252A35;
+  border-radius: 12px;
+}
+
+.roadmap-item .card-body {
+  text-align: center;
+}
+
+.roadmap-item .card-body p {
+  font-size: var(--normal-font-size);
+  margin-top: 15px;
+}
+
+.roadmap-item .rodmap-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.roadmap-bootom-img {
+  margin-top: -30px;
+}
+
+.roadmap-item .row {
+  justify-content: center;
+}
+
+/* ===============================================
+================= Metaverse Robots ===============
+================================================== */
+
+
+.wrapper {
+  max-width: 75rem;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 12.5rem);
+  gap: .5rem;
+}
+
+/* Gallery Layout */
+.gallery__item--1 {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.gallery__item--2 {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.gallery__item--3 {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.gallery__item--4 {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 3;
+}
+
+.gallery__item--5 {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 2;
+}
+
+.gallery__item--6 {
+  grid-column: 3 / span 1;
+  grid-row: 4 / span 1;
+}
+
+/* Gallery Link */
+.gallery__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Gallery Link Overlay */
+.gallery__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+
+/* Gallery Image */
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition:
+    transform .5s,
+    filter .5s;
+}
+
+@media screen and (max-width: 60rem) {
+  .wrapper {
+    padding: 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Gallery Layout */
+  .gallery__item--1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+
+  .gallery__item--2 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .gallery__item--3 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+  }
+
+  .gallery__item--4 {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 2;
+  }
+
+  .gallery__item--5 {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+  }
+
+  .gallery__item--6 {
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+  }
+}
+
+@media screen and (max-width: 35rem) {
+  .gallery {
+    display: block;
+  }
+
+  .gallery__item {
+    margin: .5rem;
+  }
+
+  .gallery__link {
+    height: 80vw;
+  }
+}
+
+/* ==========================================
+================= Team ===============
+============================================= */
+
+#team .card {
+  background-image: url(../images/team/bg.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  text-align: center;
+  background-color: #131722;
+  border: 1px solid #252A35;
+}
+
+#team .card .card-body img {
+  width: 100%;
+}
+
+#team .card:hover {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+}
+
+#team .card h3 {
+  color: var(--white-color);
+  margin-top: 30px;
+}
+
+#team .card p {
+  color: var(--first-color);
+  font-size: var(--h6-font-size);
+}
+
+/* ==========================================
+================= Footer===============
+============================================= */
+#footer {
+  background: #1D1E29;
+  padding: 1.5rem 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-icons .icon {
+  float: left;
+  margin-right: 20px;
+}
+
+/* ==========================================
+==================NFT Profile================
+============================================= */
+
+#section {
+  background: #252A35;
+  padding: 1rem;
+}
+
+
+.profile-list .card {
+  padding: 0 !important;
+  margin: 10px 0 !important;
+  border: none;
+  border-radius: 12px;
+  background: #252A35;
+}
+
+.profile-list .card-body {
+  margin-top: 10px;
+}
+
+.profile-list .card-body .name {
+  display: flex;
+  align-items: center;
+}
+
+
+.profile-list .card-body .name .modal-title {
+  margin-left: 20px;
+}
+
+.profile-list .card-body .name .modal-title p {
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.profile-list .card-body .name .number {
+  width: 48px;
+  height: 48px;
+  background: var(--first-color);
+  text-align: center;
+  line-height: 48px;
+  border-radius: 2px;
+}
+
+.profile-list .material {
+  margin-top: 20px;
+}
+
+.profile-list .btn {
+  width: 100%;
+}
+
+.profile-list .material hr {
+  margin: 5px 0;
+}
+
+.profile-list .btn-metaverse {
+  margin-top: 15px;
+}
+
+/* ==========================================
+================= coming-soon===============
+============================================= */
+
+#coming-soon {
+  padding: 16rem 0 !important;
+}
+
+.page-content {
+  text-align: center;
+}
+
+.page-content h1 {
+  margin: 50px 0;
+}
+
+.page-content h2 {
+  font-size: 64px;
+}
+
+/* ==========================================
+================= Mobile View ===============
+============================================= */
+
+@media only screen and (max-width: 392px) {
+  #time {
+    font-size: 16px !important;
+  }
+}
+
+@media only screen and (max-width: 468px) {
+  section {
+    padding: 2rem 0 !important;
+  }
+
+
+  .l-header .container {
+    max-width: 50%;
+  }
+
+  .nav__list .nav__item {
+    margin: .7rem .7rem;
+  }
+
+
+  #time h3 {
+    font-size: 22px;
+  }
+
+  /*====footer====*/
+  .footer-icons .icon {
+    float: none;
+    margin: 15px 0;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+
+  section {
+    padding: 4rem 0;
+  }
+
+
+  .l-header .container {
+    max-width: 90%;
+  }
+
+  .nav__logo {
+    width: 60px;
+    position: relative;
+  }
+
+  /* === NFT=== */
+  .nft-example .col-lg-2 {
+    min-width: 100% !important;
+  }
+
+  .nft-example .item .card {
+    background-color: #252A35;
+    background-image: url(../images/NFT-examples/bg.png);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    transition: all 0.5s;
+  }
+
+
+  .nft-example .item .card {
+    margin-top: 30px;
+  }
+
+  .item .card:hover {
+    transform: scale(1) !important;
+    -webkit-transform: scale(1) !important;
+  }
+
+  .nft-example .card-body img {
+    width: 100%;
+    background-size: contain !important;
+  }
+
+  .nft-example .card-body h5 {
+    font-size: 35px;
+  }
+
+  /* === NFT Mint=== */
+
+  .nft-mint {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+    justify-content: center;
+  }
+
+  .nft-mint img {
+    width: 100%;
+  }
+
+  .nft-mint .nft-mint-content {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .nft-mint-content .mint-descrip {
+    margin-top: 30px;
+  }
+
+  .mint-bar {
+    max-width: 100%;
+    padding: 35px 20px;
+    background-color: var(--first-color);
+    border-radius: 12px;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item-btn {
+    margin-top: 30px;
+  }
+
+
+  /* ===team=== */
+  .team-img {
+    width: 100%;
+  }
+
+  #team .card {
+    margin-top: 25px;
+  }
+
+  #team .row>* {
+    min-width: 100% !important;
+  }
+
+  #time h3 {
+    font-size: 22px;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+
+  .l-header .container {
+    max-width: 95%;
+  }
+
+  .nav__logo {
+    width: 190px;
+    position: relative;
+  }
+
+  .nft-example .item {
+    margin-top: 25px;
+  }
+
+  .nft-example .item .card-body h5 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .nft-example .item .card-body img {
+    width: 100%;
+  }
+
+
+  /*=== NFT Mint===*/
+  .nft-example .col-lg-2 {
+    min-width: 50%;
+  }
+
+  .nft-mint {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+    justify-content: center;
+  }
+
+  .nft-mint img {
+    width: 100%;
+  }
+
+  .nft-mint .nft-mint-content {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .nft-mint-content .mint-descrip {
+    margin-top: 30px;
+  }
+
+  .mint-bar {
+    max-width: 100%;
+    padding: 35px 20px;
+    background-color: var(--first-color);
+    border-radius: 12px;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item-btn {
+    margin-top: 30px;
+  }
+
+
+  /*=== Roadmap ===*/
+
+  .roadmap-item img {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .team-img {
+    width: 100% !important;
+  }
+
+
+  /* ===footer=== */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer .footer-logo {
+    margin-bottom: 20px;
+    width: 220px;
+
+  }
+
+  .footer-icons .icon {
+    float: none;
+    margin: 15px 0;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    text-align: center;
+    max-width: 750px;
+    margin: 50px auto 50px;
+  }
+
+  .nav__logo {
+    width: 190px;
+    position: relative;
+  }
+
+  /*=== NFT Mint===*/
+
+  .nft-mint {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+    justify-content: center;
+  }
+
+  .nft-mint img {
+    width: 100%;
+  }
+
+  .nft-mint .nft-mint-content {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .nft-mint-content .mint-descrip {
+    margin-top: 30px;
+  }
+
+  .nft-example .item .card-body h5 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .mint-bar {
+    max-width: 100%;
+    padding: 35px 20px;
+    background-color: var(--first-color);
+    border-radius: 12px;
+    display: block !important;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item-btn {
+    margin-top: 30px;
+  }
+
+  .mint-bar #result {
+    font-size: 22px;
+  }
+
+  /* ====Roadmap==== */
+  .roadmap-item .row>* {
+    width: auto;
+  }
+
+  .roadmap-item img {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .roadmap-item .roadmap-bootom-img {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ===team=== */
+  .team-img {
+    width: 100% !important;
+  }
+
+  #team .card {
+    margin-top: 25px;
+  }
+
+  #team .row>* {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mint-bar {
+    max-width: 1000px;
+    padding: 35px 20px;
+    background-color: var(--first-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -4%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .down-card h2 {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+
+  /* ===nft-example=== */
+  .nft-example .col-lg-2 {
+    width: 33.333%;
+  }
+
+  .nft-example img {
+    width: 100%;
+  }
+
+  .nft-example .card {
+    margin-top: 30px;
+  }
+
+  .nft-example .item .card-body h5 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+}
